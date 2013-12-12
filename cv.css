@@ -37,6 +37,7 @@ div{
    position: absolute;
    right: 0;
    top: 0;
+   margin-top: 0;
  }
 
 .coords span, .title span {
@@ -45,16 +46,59 @@ div{
 
 /* short description*/
 .short.description{
-    margin: 2em 2em 2em 2em;
     padding: .5em 1.5em .5em 1.5em;
     border: 1px solid black;
     background-color: #DDD;
-    display: inline-block;
+    width: 80%;
+    margin: 2em auto;
 }
 .short.description p {
-    margin: 0 0 .1em 0em;
+    margin: 0 0 .2em 0em;
 }
 
 .short.description .keyword{
     font-weight: bold; 
 }
+
+/*skills*/
+.skills {
+    margin-left: 10%;
+    width: 80%;
+}
+.skills > .title{
+    /*display: block;
+    -webkit-transform: rotate(-90deg);
+    width: 2em;
+    height: 2em;*/
+}
+
+.skill {
+    margin-top: 0.8em;
+
+}
+.skill .title{
+    font-weight: bold;
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.skill ul{
+    list-style-type: none;
+    display: inline-block;
+    width: 70%;
+    margin: 0.3em 0 0 20%;
+    padding-left: 4px;
+}
+
+.skill ul:first-of-type{
+    margin: 0;
+    padding-left: 0;
+}
+
+.skill li{
+    display: inline;
+}
+
+
+
