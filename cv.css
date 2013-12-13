@@ -82,27 +82,19 @@ body{
     margin: 0 0 .2em 0em;
 }
 
-.skills, .missions {
+.skills, .missions{
+    border-left: 1px solid grey;
+    padding-left: 1em;
     margin-left: 10%;
     width: 80%;
 }
 
-section > .title{
-	-webkit-transform-origin: 0em 0em;
-	-webkit-transform: rotate(270deg) translate(-6em, -2em);
-	display: inline-block;
-	font-weight: bold;
-    font-size: 1.5em;
-	color: #888;
-	position: absolute;
-}
 
 /*skills*/
 .skills {
     margin-bottom: 4em;
-    border-left: 1px solid grey;
-    padding-left: 1em
 }
+
 
 .skills ul{
     width: 70%;
@@ -131,12 +123,11 @@ section > .title{
 
 
 /*missions*/
-.missions{
-    border-left: 1px solid grey;
-    padding-left: 1em
+.mission:first-of-type{
+    margin-top: .8em;
 }
 
-.mission{
+.mission+.mission{
     margin-top: 2em;
 }
 .mission .title{
@@ -154,3 +145,68 @@ section > .title{
 }
 
 
+@media screen and (max-width:480px){
+    .resume {
+        font-size: 1em;
+    }
+
+    .resume > .coords, .resume > .title {
+        width: 70%;
+        text-align: left;//? ? :;
+        margin: 8em 0em 1em 2em;
+        position: relative;
+    }
+
+    .coords .name,.resume > .title {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .resume > .title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-top: 0;
+    }
+
+    .short.description p+p {
+        margin-top: 1em;
+    }
+
+    section > .title{
+        //-webkit-transform-origin: 0em 0em;
+        -webkit-transform: rotate(0deg) translate(0,0);
+        display: inline-block;
+        font-weight: bold;
+        font-size: 1.5em;
+        color: #888;
+        position: relative;
+    }
+
+    .skills {
+        margin-bottom: 2em;
+    }
+
+    .skills, .missions {
+        margin-left: .5em;
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .skill .title {
+        font-weight: bold;
+        width: 100%;
+        display: block;
+    }
+
+    .skills ul, .missions ul {
+        width: 95%;
+        margin:.2em 0 0 0;
+        padding: 0;
+    }
+
+    .mission .description p{
+        margin: .2em 0 0 0;
+    }
+}
