@@ -10,12 +10,23 @@ a:hover
      cursor:pointer;  
 }
 body{
-margin : 0;
+    margin : 0;
 }
-div{
-//    border: 1px solid grey;
-       margin-top: 1em;
+
+.resume ul {
+    list-style-type: none;
+    display: inline-block;
+    width: 70%;
+    margin: 0.3em 0 0 0;
+    padding-left: 0;
 }
+
+.resume li{
+    display: inline;
+    font-style: italic;
+}
+
+
 /*HEADERS*/
 .resume {
     position : absolute;
@@ -60,11 +71,17 @@ div{
     font-weight: bold; 
 }
 
-/*skills*/
-.skills {
+.skills, .missions {
     margin-left: 10%;
     width: 80%;
 }
+
+
+/*skills*/
+.skills {
+    margin-bottom: 4em;
+}
+
 .skills > .title{
     /*display: block;
     -webkit-transform: rotate(-90deg);
@@ -74,7 +91,6 @@ div{
 
 .skill {
     margin-top: 0.8em;
-
 }
 .skill .title{
     font-weight: bold;
@@ -84,9 +100,6 @@ div{
 }
 
 .skill ul{
-    list-style-type: none;
-    display: inline-block;
-    width: 70%;
     margin: 0.3em 0 0 20%;
     padding-left: 4px;
 }
@@ -96,9 +109,19 @@ div{
     padding-left: 0;
 }
 
-.skill li{
-    display: inline;
+
+/*missions*/
+.mission{
+    margin-top: 2em;
+}
+.mission .title{
+    font-weight: bold;
+    width: 80%;
+    display: block;
 }
 
+.mission .description p {
+    margin: 0;
+}
 
 
