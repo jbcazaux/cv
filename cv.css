@@ -26,6 +26,13 @@ body{
     font-style: italic;
 }
 
+.resume li:after{
+    content : ","
+}
+.resume li:last-child:after{
+    content : ""
+}
+
 
 /*HEADERS*/
 .resume {
@@ -80,6 +87,8 @@ body{
 /*skills*/
 .skills {
     margin-bottom: 4em;
+    border-left: 1px solid grey;
+    padding-left: 1em
 }
 
 .skills > .title{
@@ -91,6 +100,7 @@ body{
 
 .skill {
     margin-top: 0.8em;
+    
 }
 .skill .title{
     font-weight: bold;
@@ -111,6 +121,10 @@ body{
 
 
 /*missions*/
+.missions{
+    border-left: 1px solid grey;
+    padding-left: 1em
+}
 .mission{
     margin-top: 2em;
 }
