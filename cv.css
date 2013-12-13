@@ -20,7 +20,6 @@ body{
 .resume ul {
     list-style-type: none;
     display: inline-block;
-    width: 70%;
     margin: 0.3em 0 0 0;
     padding-left: 0;
 }
@@ -30,9 +29,18 @@ body{
     font-style: italic;
 }
 
-.resume li+li:before{
+.resume li:after{
     content : ", "
 }
+.resume li:last-child:after{
+    content : "."
+}
+
+.keyword{
+    font-weight: bold;
+    white-space:nowrap;
+}
+
 
 /*HEADERS*/
 .resume {
@@ -74,10 +82,6 @@ body{
     margin: 0 0 .2em 0em;
 }
 
-.short.description .keyword{
-    font-weight: bold; 
-}
-
 .skills, .missions {
     margin-left: 10%;
     width: 80%;
@@ -85,9 +89,10 @@ body{
 
 section > .title{
 	-webkit-transform-origin: 0em 0em;
-	-webkit-transform: rotate(270deg) translate(-6em, -3em);
+	-webkit-transform: rotate(270deg) translate(-6em, -2em);
 	display: inline-block;
 	font-weight: bold;
+    font-size: 1.5em;
 	color: #888;
 	position: absolute;
 }
@@ -97,6 +102,10 @@ section > .title{
     margin-bottom: 4em;
     border-left: 1px solid grey;
     padding-left: 1em
+}
+
+.skills ul{
+    width: 70%;
 }
 
 .skill {
@@ -135,9 +144,13 @@ section > .title{
     width: 80%;
     display: block;
 }
-
+.missions ul{
+    width: 80%;
+}
 .mission .description p {
     margin: 0;
+    width: 90%;
+
 }
 
 
