@@ -14,7 +14,11 @@ body{
 }
 
 .resume {
-	margin-top: 1em;
+	margin: 1em 0 0 0;
+    position : absolute;
+    width: 100%;
+    max-width: 1024px;
+    padding-bottom: 1em;
 }
 
 .resume ul {
@@ -43,11 +47,6 @@ body{
 
 
 /*HEADERS*/
-.resume {
-    position : absolute;
-    width: 100%;
-    max-width: 1024px;
-}
 .resume > .coords, .resume > .title{
     width: 40%;
     text-align: center;
@@ -95,16 +94,12 @@ section > .title{
     border-left: 1px solid grey;
     padding-left: 1em;
     margin-left: 5%;
-    width: 80%;
+    margin-bottom: 4em;
+    width: 90%;
 }
 
 
 /*skills*/
-.skills {
-    margin-bottom: 4em;
-}
-
-
 .skills ul{
     width: 70%;
 }
