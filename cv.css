@@ -35,6 +35,7 @@ a:hover
 .resume li{
     display: inline;
     font-style: italic;
+    white-space:nowrap;
 }
 
 .resume li:after{
@@ -84,9 +85,12 @@ a:hover
 }
 
 /*skills */
+section .title {
+    font-weight: bold;
+}
+
 section > .title{
     display: inline-block;
-    font-weight: bold;
     font-size: 1.5em;
     color: #888;
     position: relative;
@@ -101,13 +105,10 @@ section > .title{
     margin-bottom: 2em;
 }
 
-.skills, .missions {
+section {
     margin: 0 1em 2em 1em;
     border-left: none;
 }
-
-
-
 
 .skills ul, .missions ul {
     width: 95%;
@@ -116,12 +117,9 @@ section > .title{
 }
 
 .skill .title {
-    font-weight: bold;
     width: 100%;
     display: block;
 }
-
-
 
 .skill ul:first-of-type{
     margin: 0;
@@ -145,6 +143,18 @@ section > .title{
     display: block;
 }
 
+.mission .tools ul {
+    margin-top: .6em;
+}
+
+.formation span {
+    display: block;
+}
+
+.formation {
+    margin-top: 1em;
+}
+
 @media screen and (min-width:800px){
     .resume > .coords, .resume > .title{
         width: 40%;
@@ -159,13 +169,17 @@ section > .title{
         margin-top: 0;
     }
 
+    .short.description p+p {
+        margin-top: .3em;
+    }
+
     section > .title{
         -webkit-transform-origin: 0em 0em;
         -webkit-transform: rotate(270deg) translate(-6em, -2em);
         position: absolute;
     }
 
-    .skills, .missions{
+    section {
         border-left: 1px solid grey;
         padding-left: 1em;
         margin-left: 5%;
@@ -173,8 +187,30 @@ section > .title{
         width: 90%;
     }
 
+
+
+    section.formations > .title {
+        -webkit-transform: rotate(270deg) translate(-5.5em, -2em);
+    }
+
+
+    .formation+.formation{
+        margin-top: 1.5em;
+        padding-bottom: 2.5em;
+    }
+
+
+
 }
 
+@media screen and (min-width:1100px){
+    section.side{
+        position: fixed;
+        right: 0;
+        top:50%;
+        margin-right: 2%;
+    }
+}
 /*
 .skill ul{
     margin: 0.3em 0 0 20%;
