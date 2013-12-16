@@ -14,6 +14,7 @@ body{
 a {
     color: #444;
     text-decoration: none;
+    display: block;
 }
 a:hover
 {
@@ -160,6 +161,14 @@ section {
         width: 40%;
         text-align: center;
         margin: 1em 4em 1em 4em;
+    }
+
+    .resume .coords a {
+        display: inline;
+    }
+
+    .resume .coords a+a:before{
+        content: " - ";
     }
 
     .resume > .title{
