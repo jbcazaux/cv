@@ -3,6 +3,10 @@ body{
     margin: 0;
 }
 
+.hidden, .hiddenOld {
+    display: none;
+}
+
 .resume {
     font-size: 1em;
     margin: 1em 0 0 0;
@@ -103,7 +107,7 @@ section > .title{
 }
 
 .skills {
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
 
 section {
@@ -125,14 +129,6 @@ section {
 .skill ul:first-of-type{
     margin: 0;
     padding-left: 0;
-}
-
-.old.mission {
-    display: none;
-}
-
-.old.mission.visible{
-    display: block;
 }
 
 section.switch > span{
@@ -165,14 +161,16 @@ section.switch > span.hidden{
     margin-top: .6em;
 }
 
-
-
 .formation span {
     display: block;
 }
 
 .formation {
     margin-top: 1em;
+}
+
+section.side {
+    display : none;
 }
 
 @media screen and (min-width:800px){
@@ -184,7 +182,7 @@ section.switch > span.hidden{
         width: 40%;
         text-align: center;
         margin: 1em 4em 1em 4em;
-    }
+        }
 
     .resume .coords a {
         display: inline;
@@ -235,8 +233,6 @@ section.switch > span.hidden{
         border-left: 1px dashed grey;
     }
 
-
-
     .formation+.formation{
         margin-top: 1.5em;
         padding-bottom: 1em;
@@ -254,8 +250,13 @@ section.switch > span.hidden{
         width: auto;
         border-right:3px solid black;
         border-left:3px solid black;
-
     }
+
+    section.side {
+        display : block;
+    }
+
+
 }
 /*
 .skill ul{
