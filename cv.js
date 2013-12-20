@@ -1,4 +1,10 @@
 (function(){
+    NodeList.prototype.toArray = function(){
+        return Array.prototype.slice.call(this);
+    };
+    HTMLCollection.prototype.toArray = function(){
+        return Array.prototype.slice.call(this);
+    };
 
     function addClass(classname, element ) {
         var cn = element.className;
@@ -34,20 +40,18 @@
     }
 
     function filterMission(filters){
-        var missions = document.getElementsByClassName('mission');
-        for (var i = 0; i < missions.length; i++){
-            var m = missions[i];
+        var missions = document.getElementsByClassName('mission').toArray();
+        missions.forEach(function(m){
             if (matchFilter(m.dataset.tag, filters)){
                 removeClass("hidden", m);
             }else{
                 addClass("hidden", m);
             }
-        }
+        });
     }
 
-    function getFilters(nodeList){
-        var arr = Array.prototype.slice.call(nodeList);
-        return filterMission(arr.map(function(c){
+    function getFilters(checkboxes){
+        return filterMission(checkboxes.map(function(c){
             return c.className;
         }));
     }
@@ -55,9 +59,9 @@
     function onCbClick(){
         var cbs = document.querySelectorAll('input[type=checkbox]:checked');
         if (cbs.length > 0) {
-            return getFilters(cbs);
+            return getFilters(cbs.toArray());
         } else {
-            return getFilters(document.querySelectorAll('input[type=checkbox]'));
+            return getFilters(document.querySelectorAll('input[type=checkbox]').toArray());
         }
     }
 
