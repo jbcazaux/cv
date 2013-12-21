@@ -214,9 +214,8 @@ section.side {
 
     section > .title{
         -webkit-transform-origin: 0em 0em;
-        -webkit-transform: rotate(270deg) translate(-6em, -2em);
         -moz-transform-origin: 0em 0em;
-        -moz-transform: rotate(270deg) translate(-7.5em, -2em);
+        -ms-transform-origin: 0em 0em;
 
         position: absolute;
     }
@@ -233,10 +232,21 @@ section.side {
         margin-bottom: 0;
     }
 
-    section.formations > .title {
-        -webkit-transform: rotate(270deg) translate(-4.5em, -2em);
-        -moz-transform: rotate(270deg) translate(-5.5em, -2em);
+    section.missions > .title {
+        -webkit-transform: rotate(270deg) translate(-5.7em, -2em);
+        -moz-transform: rotate(270deg) translate(-6.6em, -2em);
+        -ms-transform: rotate(270deg) translate(-5.5em, -2em);
     }
+    section.skills > .title {
+        -webkit-transform: rotate(270deg) translate(-6.5em, -2em);
+        -moz-transform: rotate(270deg) translate(-7.2em, -2em);
+        -ms-transform: rotate(270deg) translate(-5.5em, -2em);
+    }
+    section.formations > .title {
+    -webkit-transform: rotate(270deg) translate(-4.5em, -2em);
+    -moz-transform: rotate(270deg) translate(-5em, -2em);
+    -ms-transform: rotate(270deg) translate(-5.5em, -2em);
+}
 
     section.switch {
         border-left: 1px dashed grey;
