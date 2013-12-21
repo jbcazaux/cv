@@ -21,15 +21,15 @@
         onChechboxFilterClick : {
             enumerable: false,
             value : function onChechboxFilterClick(e){
-                if (e.target.nodeName != 'LABEL' && e.target.nodeName != 'INPUT'){
-                    return false;
+                if (e.target.nodeName != 'INPUT'){
+                    return true;
                 }
                 var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
                 checkboxes = checkboxes.length > 0 ? checkboxes : document.querySelectorAll('input[type=checkbox]');
-                //getFilters();
                 missionFilter.filterMissionWithTags(checkboxes.toArray().map(function(c){
                     return c.dataset.filter;
-                }))
+                }));
+                ga('send', 'event', 'button', 'click', 'filter' + e.target.id);
             }
         },
         matchFilter : {
@@ -57,17 +57,31 @@
             sideFilter = document.querySelector('section.side'),
             descriptionPlus = document.getElementById('plus'),
             descriptionMore = document.getElementById('more');
+            var showRegexp = new RegExp("Afficher");
+            var plusRegexp = new RegExp("Plus");
 
         displayOld.onclick = function(){
+
             oldies.forEach(function (o){
                 o.classList.toggle("hiddenOld");
             });
-            displayOld.innerHTML = displayOld.innerHTML.indexOf("Afficher") > -1 ?
-                   "Masquer les missions plus anciennes" : "Afficher les missions plus anciennes";
+            if (displayOld.innerHTML.match(showRegexp)){
+                displayOld.innerHTML = "Afficher les missions plus anciennes";
+                ga('send', 'event', 'button', 'click', 'old missions', 0);
+            } else {
+                displayOld.innerHTML = "Masquer les missions plus anciennes";
+                ga('send', 'event', 'button', 'click', 'old missions', 1);
+            }
         }
 
         descriptionPlus.onclick = function(){
-            descriptionPlus.innerHTML = plus.innerHTML.indexOf("Plus") > -1 ? "Réduire" : "Plus...";
+            if (plus.innerHTML.match(plusRegexp)){
+                descriptionPlus.innerHTML = "Réduire";
+                ga('send', 'event', 'button', 'click', 'more description', 1);
+            } else {
+                descriptionPlus.innerHTML = "Plus...";
+                ga('send', 'event', 'button', 'click', 'more description', 0);
+            }
             descriptionMore.classList.toggle("hidden");
         }
 
