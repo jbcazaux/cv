@@ -6,89 +6,72 @@
         return Array.prototype.slice.call(this);
     };
 
-    function addClass(classname, element ) {
-        var cn = element.className;
-        var rxp = new RegExp( "\\s+\\b"+classname+"\\b", "g" );
-        if( !cn.match(rxp) ) {
-            classname = ' ' + classname;
-            element.className = cn + classname;
-        }
-    }
 
-    function removeClass( classname, element ) {
-        var rxp = new RegExp( "\\s+\\b"+classname+"\\b", "g" );
-        var cn = element.className;
-        element.className = cn.replace( rxp, '' );
-    }
 
-    function toggleClass(classname, element){
-        var rxp = new RegExp( "\\s+\\b"+classname+"\\b", "g" );
-        if (element.className.match(rxp)){
-            element.className = element.className.replace( rxp, '' );
-        } else {
-            element.className = element.className + ' ' + classname;
-        }
-    }
-
-    function matchFilter(tags, filters){
-        for (var i in filters){
-            if (tags.indexOf(filters[i]) > -1){
-                return true;
+    var missionFilter = Object.defineProperties({}, {
+        filterMissionWithTags : {
+            enumerable : false,
+            value : function (filters){
+                var missions = document.getElementsByClassName('mission').toArray();
+                missions.forEach(function(m){
+                    missionFilter.matchFilter(m.dataset.tag, filters) ? m.classList.remove("hidden") : m.classList.add("hidden");
+                });
+            }
+        },
+        onChechboxFilterClick : {
+            enumerable: false,
+            value : function onChechboxFilterClick(e){
+                if (e.target.nodeName != 'LABEL' && e.target.nodeName != 'INPUT'){
+                    return false;
+                }
+                var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+                checkboxes = checkboxes.length > 0 ? checkboxes : document.querySelectorAll('input[type=checkbox]');
+                //getFilters();
+                missionFilter.filterMissionWithTags(checkboxes.toArray().map(function(c){
+                    return c.dataset.filter;
+                }))
+            }
+        },
+        matchFilter : {
+            enumerable: false,
+            value : function matchFilter(tags, filters){
+                for (var i in filters){
+                    if (tags.indexOf(filters[i]) > -1){
+                        return true;
+                    }
+                }
+                return false;
             }
         }
-        return false;
-    }
 
-    function filterMission(filters){
-        var missions = document.getElementsByClassName('mission').toArray();
-        missions.forEach(function(m){
-            if (matchFilter(m.dataset.tag, filters)){
-                removeClass("hidden", m);
-            }else{
-                addClass("hidden", m);
-            }
-        });
-    }
+    });
 
-    function getFilters(checkboxes){
-        return filterMission(checkboxes.map(function(c){
-            return c.className;
-        }));
-    }
 
-    function onCbClick(){
-        var cbs = document.querySelectorAll('input[type=checkbox]:checked');
-        if (cbs.length > 0) {
-            return getFilters(cbs.toArray());
-        } else {
-            return getFilters(document.querySelectorAll('input[type=checkbox]').toArray());
-        }
-    }
+
+
 
     function registerEvents(){
-        var displayOld = document.getElementById('displayOld');
-        var oldies = document.getElementsByClassName('old mission');
+        var displayOld = document.getElementById('displayOld'),
+            oldies = document.getElementsByClassName('old mission').toArray(),
+            checkboxes = document.querySelectorAll('input[type=checkbox]'),
+            sideFilter = document.querySelector('section.side'),
+            descriptionPlus = document.getElementById('plus'),
+            descriptionMore = document.getElementById('more');
 
         displayOld.onclick = function(){
-            for (var i = 0 ; i < oldies.length; i++){
-                toggleClass("hiddenOld", oldies[i]);
-            }
+            oldies.forEach(function (o){
+                o.classList.toggle("hiddenOld");
+            });
             displayOld.innerHTML = displayOld.innerHTML.indexOf("Afficher") > -1 ?
                    "Masquer les missions plus anciennes" : "Afficher les missions plus anciennes";
         }
 
-        var checkboxes = document.querySelectorAll('input[type=checkbox]');
-        for (var i = 0 ; i < checkboxes.length; i++){
-            checkboxes[i].onclick = onCbClick;
+        descriptionPlus.onclick = function(){
+            descriptionPlus.innerHTML = plus.innerHTML.indexOf("Plus") > -1 ? "Réduire" : "Plus...";
+            descriptionMore.classList.toggle("hidden");
         }
 
-        var descriptionPlus = document.getElementById('plus');
-        var descriptionMore = document.getElementById('more');
-        plus.onclick = function(){
-            plus.innerHTML = plus.innerHTML.indexOf("Plus") > -1 ? "Réduire" : "Plus...";
-            toggleClass("hidden", descriptionMore);
-        }
-
+        sideFilter.onclick = missionFilter.onChechboxFilterClick;
 
 
     };
