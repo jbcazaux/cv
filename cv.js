@@ -5,16 +5,59 @@
     HTMLCollection.prototype.toArray = function(){
         return Array.prototype.slice.call(this);
     };
-	Array.prototype.toArray = function(){
-        return this;
-    };
+	
+	Element.prototype.addClass = function(c){
+		return this.classList.add(c);
+	}
+	Element.prototype.removeClass = function(c){
+		return this.classList.remove(c);
+	}
+	Element.prototype.toggleClass = function(c){
+		return this.classList.toggle(c);
+	}
 	
 	if (!document.getElementsByClassName('mission')[0].classList)
 	{
-		document.querySelector('section.side').innerHTML = "";
-		document.querySelector('section.switch').innerHTML = "";
-		document.getElementById('plus').innerHTML = "";
-		return;
+		var ie9Support = Object.defineProperties({}, {
+			addClass : {
+				value : function(classname, element ) {
+					 var cn = element.className;
+					 var rxp = new RegExp( "\\s?\\b"+classname+"\\b", "g" );
+			 
+					 if( !cn.match(rxp) ) {
+						 classname = ' ' + classname;
+						 element.className = cn + classname;
+					 }
+				}
+			},
+			removeClass : {
+				value : function( classname, element ) {
+					 var cn = element.className;
+					 var rxp = new RegExp( "\\s?\\b"+classname+"\\b", "g" );
+					 element.className = cn.replace( rxp, '' );
+				}
+			},
+			toggleClass : {
+				value : function(classname, element){
+					var rxp = new RegExp( "\\s+\\b"+classname+"\\b", "g" );
+			        if (element.className.match(rxp)){
+			            element.className = element.className.replace( rxp, '' );
+			        } else {
+			            element.className = element.className + ' ' + classname;
+			        }
+				}
+			}
+		});
+		
+		Element.prototype.addClass = function(c){
+			return ie9Support.addClass(c, this);
+		}
+		Element.prototype.removeClass = function(c){
+			return ie9Support.removeClass(c,this);
+		}
+		Element.prototype.toggleClass = function(c){
+			return ie9Support.toggleClass(c,this);
+		}
 	}
 
 
@@ -24,7 +67,10 @@
             value : function (filters){
                 var missions = document.getElementsByClassName('mission').toArray();
                 missions.forEach(function(m){
-                    missionFilter.matchFilter(m.dataset.tag, filters) ? m.classList.remove("hidden") : m.classList.add("hidden");
+					var tag = m.dataset ? m.dataset.tag : m.getAttribute('data-tag');
+					missionFilter.matchFilter(tag, filters) ? m.removeClass('hidden') : m.addClass('hidden');
+					//missionFilter.matchFilter(tag, filters) ? removeClass("hidden", m) : addClass("hidden", m);
+                    //missionFilter.matchFilter(m.dataset.tag, filters) ? m.classList.remove("hidden") : m.classList.add("hidden");
                 });
             }
         },
@@ -37,7 +83,8 @@
                 var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
                 checkboxes = checkboxes.length > 0 ? checkboxes : document.querySelectorAll('input[type=checkbox]');
                 missionFilter.filterMissionWithTags(checkboxes.toArray().map(function(c){
-                    return c.dataset.filter;
+					return (c.dataset ? c.dataset.filter : c.getAttribute('data-filter'));
+                    //return c.dataset.filter;
                 }));
                 ga('send', 'event', 'button', 'click', 'filter' + e.target.id);
             }
@@ -56,24 +103,20 @@
 
     });
 
-
-
-
-
     function registerEvents(){
         var displayOld = document.getElementById('displayOld'),
             oldies = document.getElementsByClassName('old mission').toArray(),
             checkboxes = document.querySelectorAll('input[type=checkbox]'),
             sideFilter = document.querySelector('section.side'),
             descriptionPlus = document.getElementById('plus'),
-            descriptionMore = document.getElementById('more');
-            var showRegexp = new RegExp("Afficher");
-            var plusRegexp = new RegExp("Plus");
+            descriptionMore = document.getElementById('more'),
+            showRegexp = new RegExp("Afficher"),
+            plusRegexp = new RegExp("Plus");
 
         displayOld.onclick = function(){
 
             oldies.forEach(function (o){
-                o.classList.toggle("hiddenOld");
+                o.toggleClass("hiddenOld");
             });
             if (displayOld.innerHTML.match(showRegexp)){
                 displayOld.innerHTML = "Masquer les missions plus anciennes";
@@ -92,14 +135,13 @@
                 descriptionPlus.innerHTML = "Plus...";
                 ga('send', 'event', 'button', 'click', 'more description', 0);
             }
-            descriptionMore.classList.toggle("hidden");
+            descriptionMore.toggleClass("hidden");
         }
 
         sideFilter.onclick = missionFilter.onChechboxFilterClick;
-
-
     };
 
     window.onload = registerEvents;
 })();
+
 
