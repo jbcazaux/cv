@@ -66,11 +66,11 @@
                 o.classList.toggle("hiddenOld");
             });
             if (displayOld.innerHTML.match(showRegexp)){
-                displayOld.innerHTML = "Afficher les missions plus anciennes";
-                ga('send', 'event', 'button', 'click', 'old missions', 0);
-            } else {
                 displayOld.innerHTML = "Masquer les missions plus anciennes";
                 ga('send', 'event', 'button', 'click', 'old missions', 1);
+            } else {
+                displayOld.innerHTML = "Afficher les missions plus anciennes";
+                ga('send', 'event', 'button', 'click', 'old missions', 0);
             }
         }
 
