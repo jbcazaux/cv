@@ -5,7 +5,17 @@
     HTMLCollection.prototype.toArray = function(){
         return Array.prototype.slice.call(this);
     };
-
+	Array.prototype.toArray = function(){
+        return this;
+    };
+	
+	if (!document.getElementsByClassName('mission')[0].classList)
+	{
+		document.querySelector('section.side').innerHTML = "";
+		document.querySelector('section.switch').innerHTML = "";
+		document.getElementById('plus').innerHTML = "";
+		return;
+	}
 
 
     var missionFilter = Object.defineProperties({}, {
@@ -92,5 +102,4 @@
 
     window.onload = registerEvents;
 })();
-
 
