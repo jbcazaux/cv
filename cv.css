@@ -235,17 +235,17 @@ section.side {
     section.missions > .title {
         -webkit-transform: rotate(270deg) translate(-5.7em, -2em);
         -moz-transform: rotate(270deg) translate(-6.6em, -2em);
-        -ms-transform: rotate(270deg) translate(-5.5em, -2em);
+        -ms-transform: rotate(270deg) translate(-6em, -2em);
     }
     section.skills > .title {
         -webkit-transform: rotate(270deg) translate(-6.5em, -2em);
         -moz-transform: rotate(270deg) translate(-7.2em, -2em);
-        -ms-transform: rotate(270deg) translate(-5.5em, -2em);
+        -ms-transform: rotate(270deg) translate(-6.8em, -2em);
     }
     section.formations > .title {
     -webkit-transform: rotate(270deg) translate(-4.5em, -2em);
     -moz-transform: rotate(270deg) translate(-5em, -2em);
-    -ms-transform: rotate(270deg) translate(-5.5em, -2em);
+    -ms-transform: rotate(270deg) translate(-4.5em, -2em);
 }
 
     section.switch {
