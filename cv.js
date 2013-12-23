@@ -5,17 +5,16 @@
     HTMLCollection.prototype.toArray = function(){
         return Array.prototype.slice.call(this);
     };
-	
 	Element.prototype.addClass = function(c){
 		return this.classList.add(c);
-	}
+	};
 	Element.prototype.removeClass = function(c){
 		return this.classList.remove(c);
-	}
+	};
 	Element.prototype.toggleClass = function(c){
 		return this.classList.toggle(c);
-	}
-	
+	};
+
 	if (!document.getElementsByClassName('mission')[0].classList)
 	{
 		var ie9Support = Object.defineProperties({}, {
@@ -60,7 +59,6 @@
 		}
 	}
 
-
     var missionFilter = Object.defineProperties({}, {
         filterMissionWithTags : {
             enumerable : false,
@@ -84,7 +82,6 @@
                 checkboxes = checkboxes.length > 0 ? checkboxes : document.querySelectorAll('input[type=checkbox]');
                 missionFilter.filterMissionWithTags(checkboxes.toArray().map(function(c){
 					return (c.dataset ? c.dataset.filter : c.getAttribute('data-filter'));
-                    //return c.dataset.filter;
                 }));
                 ga('send', 'event', 'button', 'click', 'filter' + e.target.id);
             }
@@ -106,7 +103,6 @@
     function registerEvents(){
         var displayOld = document.getElementById('displayOld'),
             oldies = document.getElementsByClassName('old mission').toArray(),
-            checkboxes = document.querySelectorAll('input[type=checkbox]'),
             sideFilter = document.querySelector('section.side'),
             descriptionPlus = document.getElementById('plus'),
             descriptionMore = document.getElementById('more'),
@@ -114,7 +110,6 @@
             plusRegexp = new RegExp("Plus");
 
         displayOld.onclick = function(){
-
             oldies.forEach(function (o){
                 o.toggleClass("hiddenOld");
             });
