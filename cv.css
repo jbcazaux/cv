@@ -8,9 +8,71 @@ body{
     display: none;
 }
 
+header {
+    border: 1px solid black;
+    position: fixed;
+    width: 100%;
+    max-width: 1024px;
+    background-color: #444444;
+    height : 2.5em;
+    opacity : 1;
+    z-index: 1000;
+}
+
+header a{
+    display : inline-block;
+    margin : .6em 0 .6em 1em;
+    color: white;
+}
+
+.animation {
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-duration: .4s;
+    -moz-animation-duration: .4s;
+    -moz-animation-fill-mode:forwards
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+}
+
+.animationOn {
+    -webkit-animation-name: animationOn;
+    -moz-animation-name: animationOn;
+    animation-name: animationOn;
+}
+.animationOff {
+    -webkit-animation-name: animationOff;
+    -moz-animation-name: animationOff;
+    animation-name: animationOff;
+}
+
+@-webkit-keyframes animationOn{
+    from  {margin-left: -70%}
+    to  {margin-left: 0}
+}
+@-webkit-keyframes animationOff {
+    from  { margin-left: 0}
+    to  { margin-left: -70%}
+}
+@-moz-keyframes animationOn{
+    from  {margin-left: -70%}
+    to  {margin-left: 0}
+}
+@-moz-keyframes animationOff {
+    from  { margin-left: 0}
+    to  { margin-left: -70%}
+}
+@keyframes animationOn {
+    from  {margin-left: -70%}
+    to  {margin-left: 0}
+}
+@keyframes animationOff {
+    from  { margin-left: 0}
+    to  { margin-left: -70%}
+}
+
 .resume {
     font-size: 1em;
-    margin: 1em 0 0 0;
+    margin: 4em 0 0 0;
     position : absolute;
     max-width: 1024px;
     padding-bottom: 1em;

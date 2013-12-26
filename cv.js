@@ -5,16 +5,17 @@
     HTMLCollection.prototype.toArray = function(){
         return Array.prototype.slice.call(this);
     };
+	
 	Element.prototype.addClass = function(c){
 		return this.classList.add(c);
-	};
+	}
 	Element.prototype.removeClass = function(c){
 		return this.classList.remove(c);
-	};
+	}
 	Element.prototype.toggleClass = function(c){
 		return this.classList.toggle(c);
-	};
-
+	}
+	
 	if (!document.getElementsByClassName('mission')[0].classList)
 	{
 		var ie9Support = Object.defineProperties({}, {
@@ -59,6 +60,7 @@
 		}
 	}
 
+
     var missionFilter = Object.defineProperties({}, {
         filterMissionWithTags : {
             enumerable : false,
@@ -66,9 +68,7 @@
                 var missions = document.getElementsByClassName('mission').toArray();
                 missions.forEach(function(m){
 					var tag = m.dataset ? m.dataset.tag : m.getAttribute('data-tag');
-					missionFilter.matchFilter(tag, filters) ? m.removeClass('hidden') : m.addClass('hidden');
-					//missionFilter.matchFilter(tag, filters) ? removeClass("hidden", m) : addClass("hidden", m);
-                    //missionFilter.matchFilter(m.dataset.tag, filters) ? m.classList.remove("hidden") : m.classList.add("hidden");
+					missionFilter.matchFilter(tag, filters) ? m.removeClass('hidden') : m.addClass('hidden');				
                 });
             }
         },
@@ -82,8 +82,11 @@
                 checkboxes = checkboxes.length > 0 ? checkboxes : document.querySelectorAll('input[type=checkbox]');
                 missionFilter.filterMissionWithTags(checkboxes.toArray().map(function(c){
 					return (c.dataset ? c.dataset.filter : c.getAttribute('data-filter'));
+		
                 }));
                 ga('send', 'event', 'button', 'click', 'filter' + e.target.id);
+
+		
             }
         },
         matchFilter : {
@@ -100,9 +103,21 @@
 
     });
 
+    function scroll(e){
+	var header = document.getElementById("header");
+	if (window.pageYOffset > 0 && !header.classList.contains("animationOff")) {
+		header.removeClass("animationOn");
+		header.addClass("animationOff");
+	} else if (window.pageYOffset === 0 && !header.classList.contains("animationOn")) {
+		header.removeClass("animationOff");
+		header.addClass("animationOn");
+	}
+    } 
+
     function registerEvents(){
         var displayOld = document.getElementById('displayOld'),
             oldies = document.getElementsByClassName('old mission').toArray(),
+            checkboxes = document.querySelectorAll('input[type=checkbox]'),
             sideFilter = document.querySelector('section.side'),
             descriptionPlus = document.getElementById('plus'),
             descriptionMore = document.getElementById('more'),
@@ -110,6 +125,7 @@
             plusRegexp = new RegExp("Plus");
 
         displayOld.onclick = function(){
+
             oldies.forEach(function (o){
                 o.toggleClass("hiddenOld");
             });
@@ -134,6 +150,8 @@
         }
 
         sideFilter.onclick = missionFilter.onChechboxFilterClick;
+
+	window.onscroll = scroll;
     };
 
     window.onload = registerEvents;
