@@ -15,6 +15,9 @@
 	Element.prototype.toggleClass = function(c){
 		return this.classList.toggle(c);
 	}
+	Element.prototype.containsClass = function(c){
+		return this.classList.contains(c);
+	}
 	
 	if (!document.getElementsByClassName('mission')[0].classList)
 	{
@@ -39,13 +42,13 @@
 			},
 			toggleClass : {
 				value : function(classname, element){
-					var rxp = new RegExp( "\\s+\\b"+classname+"\\b", "g" );
-			        if (element.className.match(rxp)){
-			            element.className = element.className.replace( rxp, '' );
-			        } else {
-			            element.className = element.className + ' ' + classname;
+                        var rxp = new RegExp( "\\s+\\b"+classname+"\\b", "g" );
+                        if (element.className.match(rxp)){
+                            element.className = element.className.replace( rxp, '' );
+                        } else {
+                            element.className = element.className + ' ' + classname;
+                        }
 			        }
-				}
 			}
 		});
 		
@@ -103,17 +106,6 @@
 
     });
 
-    function scroll(e){
-	var header = document.getElementById("header");
-	if (window.pageYOffset > 0 && !header.classList.contains("animationOff")) {
-		header.removeClass("animationOn");
-		header.addClass("animationOff");
-	} else if (window.pageYOffset === 0 && !header.classList.contains("animationOn")) {
-		header.removeClass("animationOff");
-		header.addClass("animationOn");
-	}
-    } 
-
     function registerEvents(){
         var displayOld = document.getElementById('displayOld'),
             oldies = document.getElementsByClassName('old mission').toArray(),
@@ -151,7 +143,16 @@
 
         sideFilter.onclick = missionFilter.onChechboxFilterClick;
 
-	window.onscroll = scroll;
+	    window.onscroll = function(){
+            var header = document.getElementById("header");
+            if (window.pageYOffset > 0 && !header.containsClass("animationOff")) {
+                header.removeClass("animationOn");
+                header.addClass("animationOff");
+            } else if (window.pageYOffset === 0 && !header.containsClass("animationOn")) {
+                header.removeClass("animationOff");
+                header.addClass("animationOn");
+            }
+        };
     };
 
     window.onload = registerEvents;
