@@ -46,28 +46,28 @@ header a{
 }
 
 @-webkit-keyframes animationOn{
-    from  {margin-left: -70%}
+    from  {margin-left: -100%}
     to  {margin-left: 0}
 }
 @-webkit-keyframes animationOff {
     from  { margin-left: 0}
-    to  { margin-left: -70%}
+    to  { margin-left: -100%}
 }
 @-moz-keyframes animationOn{
-    from  {margin-left: -70%}
+    from  {margin-left: -100%}
     to  {margin-left: 0}
 }
 @-moz-keyframes animationOff {
     from  { margin-left: 0}
-    to  { margin-left: -70%}
+    to  { margin-left: -100%}
 }
 @keyframes animationOn {
-    from  {margin-left: -70%}
+    from  {margin-left: -100%}
     to  {margin-left: 0}
 }
 @keyframes animationOff {
     from  { margin-left: 0}
-    to  { margin-left: -70%}
+    to  { margin-left: -100%}
 }
 
 .resume {
