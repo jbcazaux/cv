@@ -8,6 +8,10 @@ body{
     display: none;
 }
 
+.hidden.data {
+    display: none;
+}
+
 header {
     border: 1px solid black;
     position: fixed;
