@@ -88,8 +88,6 @@
 		
                 }));
                 ga('send', 'event', 'button', 'click', 'filter' + e.target.id);
-
-		
             }
         },
         matchFilter : {
@@ -109,7 +107,6 @@
     function registerEvents(){
         var displayOld = document.getElementById('displayOld'),
             oldies = document.getElementsByClassName('old mission').toArray(),
-            checkboxes = document.querySelectorAll('input[type=checkbox]'),
             sideFilter = document.querySelector('section.side'),
             descriptionPlus = document.getElementById('plus'),
             descriptionMore = document.getElementById('more'),
@@ -117,7 +114,6 @@
             plusRegexp = new RegExp("Plus");
 
         displayOld.onclick = function(){
-
             oldies.forEach(function (o){
                 o.toggleClass("hiddenOld");
             });
