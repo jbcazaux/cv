@@ -8,8 +8,6 @@ body{
     display: none;
 }
 
-<<<<<<< Updated upstream
-=======
 .hidden.data {
     display: none;
 }
@@ -28,7 +26,7 @@ header {
 }
 
 footer {
-    border: 1px solid black;
+    border-top: 1px solid black;
     position: fixed;
     width: 100%;
     max-width: 1008px;
@@ -39,6 +37,7 @@ footer {
     bottom: 0;
     padding: .5em;
 }
+
 
 header a{
     display : inline-block;
@@ -55,49 +54,57 @@ header a{
     animation-fill-mode: forwards;
 }
 
-.animationOn {
-    -webkit-animation-name: animationOn;
-    -moz-animation-name: animationOn;
-    animation-name: animationOn;
+.animationHeaderOn {
+    -webkit-animation-name: animationHeaderOn;
+    animation-name: animationHeaderOn;
 }
-.animationOff {
-    -webkit-animation-name: animationOff;
-    -moz-animation-name: animationOff;
-    animation-name: animationOff;
+.animationHeaderOff {
+    -webkit-animation-name: animationHeaderOff;
+    animation-name: animationHeaderOff;
 }
 
-@-webkit-keyframes animationOn{
-    from  {margin-left: -100%}
+@-webkit-keyframes animationHeaderOn{
+    from  {margin-left: -102%}
     to  {margin-left: 0}
 }
-@-webkit-keyframes animationOff {
+@-webkit-keyframes animationHeaderOff {
     from  { margin-left: 0}
-    to  { margin-left: -100%}
+    to  { margin-left: -102%}
 }
-@-moz-keyframes animationOn{
-    from  {margin-left: -100%}
+@keyframes animationHeaderOn {
+    from  {margin-left: -102%}
     to  {margin-left: 0}
 }
-@-moz-keyframes animationOff {
+@keyframes animationHeaderOff {
     from  { margin-left: 0}
-    to  { margin-left: -100%}
-}
-@keyframes animationOn {
-    from  {margin-left: -100%}
-    to  {margin-left: 0}
-}
-@keyframes animationOff {
-    from  { margin-left: 0}
-    to  { margin-left: -100%}
+    to  { margin-left: -102%}
 }
 
->>>>>>> Stashed changes
+.animationFooterOn {
+    -webkit-animation-name: animationFooterOn;
+    animation-name: animationFooterOn;
+}
+.animationFooterOff {
+    -webkit-animation-name: animationFooterOff;
+    animation-name: animationFooterOff;
+}
+
+@-webkit-keyframes animationFooterOn{
+    from  {bottom: -4em}
+    to  {bottom: 0}
+}
+@-webkit-keyframes animationFooterOff {
+    from  { bottom: 0}
+    to  { bottom: -4em}
+}
+
+
 .resume {
     font-size: 1em;
-    margin: 1em 0 0 0;
+    margin: 4em 0 0 0;
     position : absolute;
     max-width: 1024px;
-    //padding-bottom: 1em;
+    padding-bottom: 1em;
 }
 
 a {
@@ -135,18 +142,18 @@ a:hover
     content : "."
 }
 
-.coords span, .title span {
+.title span {
     display: block;
 }
 
 
-.coords .name,.resume > .title {
+.coords .name,.resume .vcard > .title {
     font-size: 1em;
     font-weight: bold;
 }
 
 
-.resume > .coords, .resume > .title {
+.resume .vcard > .coords, .resume .vcard > .title {
     width: 70%;
     text-align: left;
     margin: 8em 0em 1em 1em;
@@ -154,7 +161,7 @@ a:hover
     font-size: 1.4em;
 }
 
-.resume > .title {
+.resume .vcard > .title {
     position: absolute;
     left: 0;
     top: 0;
@@ -271,7 +278,7 @@ section.side {
         font-size: 1em;
     }
 
-    .resume > .coords, .resume > .title{
+    .resume .vcard > .coords, .resume .vcard > .title{
         width: 40%;
         text-align: center;
         margin: 1em 4em 1em 4em;
@@ -285,7 +292,7 @@ section.side {
         content: " - ";
     }
 
-    .resume > .title{
+    .resume .vcard > .title{
         position: absolute;
         right: 0;
         left: inherit;
@@ -358,11 +365,4 @@ section.side {
     section.side {
         display : block;
     }
-
-
 }
-/*
-.skill ul{
-    margin: 0.3em 0 0 20%;
-    padding-left: 4px;
-}*/

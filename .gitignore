@@ -1,4 +1,8 @@
 *~
 /.idea/
 bin/
-/platforms/
+.cordova/
+platforms/android/cordova/
+platforms/android/CordovaLib/
+platforms/android/gen/
+plugins/
