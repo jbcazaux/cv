@@ -2,6 +2,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: .9em;
     margin: 0;
+    background-color: #DDF4EE;
 }
 
 .hidden, .hiddenOld {
@@ -82,7 +83,6 @@ header a{
     position : absolute;
     max-width: 1024px;
     padding-bottom: 1em;
-    background-color: #DDF4EE;
 }
 
 a {
