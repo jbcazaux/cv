@@ -82,6 +82,7 @@ header a{
     position : absolute;
     max-width: 1024px;
     padding-bottom: 1em;
+    background-color: #DDF4EE;
 }
 
 a {
@@ -148,7 +149,7 @@ a:hover
 .short.description{
     padding: .5em 1em .5em 1em;
     border: 1px solid black;
-    background-color: #DDD;
+    background-color: #BDD;
     margin: 1em;
 }
 .short.description p {
