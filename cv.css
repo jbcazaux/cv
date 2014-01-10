@@ -18,7 +18,7 @@ header {
     position: fixed;
     width: 100%;
     max-width: 1024px;
-    background-color: #444444;
+    background-color: #BDD;
     height : 2.5em;
     opacity : 1;
     z-index: 1000;
@@ -29,7 +29,6 @@ header {
 header a{
     display : inline-block;
     margin : .6em 0 .6em 1em;
-    color: white;
 }
 
 .animation {
@@ -81,7 +80,7 @@ header a{
     font-size: 1em;
     margin: 4em 0 0 0;
     position : absolute;
-    max-width: 1024px;
+    max-width: 1044px;
     padding-bottom: 1em;
 }
 
@@ -331,7 +330,7 @@ section.side {
 @media screen and (min-width:1200px){
     section.side{
         position: fixed;
-        left: 1024px;
+        left: 1056px;
         top:50%;
         margin: 0 .5em 0 0;
         padding: 0 1em;

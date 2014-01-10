@@ -1,6 +1,7 @@
-#version 1
 CACHE MANIFEST
-cv.js
-cv.css
-index.html
+
+#version 1
+/cv/cv.js
+/cv/cv.css
+/cv/index.html
 http://fonts.googleapis.com/css?family=Roboto
