@@ -238,6 +238,11 @@ section.switch > span.hidden{
     margin-top: .6em;
 }
 
+.article+.article{
+    margin-top: 1em;
+}
+
+
 .formation span {
     display: block;
 }
@@ -310,11 +315,16 @@ section.side {
         -moz-transform: rotate(270deg) translate(-7.2em, -2em);
         -ms-transform: rotate(270deg) translate(-6.8em, -2em);
     }
+    section.articles > .title {
+        -webkit-transform: rotate(270deg) translate(-3.8em, -2em);
+        -moz-transform: rotate(270deg) translate(-4.2em, -2em);
+        -ms-transform: rotate(270deg) translate(-4em, -2em);
+    }
     section.formations > .title {
-    -webkit-transform: rotate(270deg) translate(-4.5em, -2em);
-    -moz-transform: rotate(270deg) translate(-5em, -2em);
-    -ms-transform: rotate(270deg) translate(-4.5em, -2em);
-}
+        -webkit-transform: rotate(270deg) translate(-4.5em, -2em);
+        -moz-transform: rotate(270deg) translate(-5em, -2em);
+        -ms-transform: rotate(270deg) translate(-4.5em, -2em);
+    }
 
     section.switch {
         border-left: 1px dashed grey;
