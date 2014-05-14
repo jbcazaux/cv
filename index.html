@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=100, initial-scale = 1.0, minimum-scale= 1.0, maximum-scale = 1.0, user-scalable = no"/>
 <meta name="description" content="CV de jean baptiste cazaux, développeur freelance java web et web mobile"/>
-<meta name="keywords" content="CV, freelance, independant, jean baptiste cazaux, jb cazaux, java, JEE, J2EE, web, mobile, html5, css3, javascript, jquery, phonegap"/>
+<meta name="keywords" content="CV, freelance, independant, jean baptiste cazaux, jb cazaux, java, JEE, J2EE, web, mobile, html5, css3, javascript, jquery, phonegap, nodejs"/>
 <link rel="canonical" href="http://www.codox.fr"/>
 
 <title>CV Jean-Baptiste CAZAUX</title>
@@ -23,7 +23,8 @@
 </head>
 <body>
 <header id="header" class="animation">
-	<a href="cv.pdf" target="_blank">Format PDF</a>
+    <a href="cazaux-jb-cv.odt" target="_blank">Format Word/OpenOffice</a>
+	<a href="cazaux-jb-cv.pdf" target="_blank">Format PDF</a>
 </header>
 <div class="resume">
     <div class="vcard http://microformats.org/profile/hcard">
@@ -35,6 +36,7 @@
 	  <div class="social">
 		<a href="http://github.com/jbcazaux" target="_blank">github.com/jbcazaux</a>
 		<a href="http://twitter.com/jbcazaux">@jbcazaux</a>
+    <a href="http://codox.fr/cv">codox.fr/cv</a>
 	  </div>
 	  <div class="mobile tel">
         <span class="type hidden data">cell</span>
@@ -47,10 +49,10 @@
          </div>
 	 </div>
 	 <div class="title">
-	    <span class="role">Développeur Freelance Sénior<br> Java, Web & Web Mobile</span>
+	    <span class="role">Développeur Freelance Sénior<br> Java, Web &amp; Web Mobile</span>
 	    <span>Scrum Master</span>
-	    <span>Formateur</span>
-        <span>9 ans d'expérience</span>
+	    <span>Formateur JS</span>
+        <span>10 ans d'expérience</span>
 	 </div>
     </div>
 
@@ -59,7 +61,7 @@
 <p>Lors de mes 9 années en SSII j'ai été <span class="keyword">force de proposition</span> sur les <span class="keyword">architectures</span>, <span class="keyword">outils</span> et <span class="keyword">méthodes</span> à adopter.</p>
 <p>Je travaille uniquement dans des contextes <span class="keyword">agiles</span>, en axant la priorité de l'équipe sur la <span class="keyword">qualité</span> et la <span class="keyword">conformité</span> du produit délivré.</p>
 <p>En dehors du rôle de <span class="keyword">tech-lead/développeur</span>, je suis aussi intervenu comme <span class="keyword">Scrum Master</span> sur plusieurs missions.</p>
-<p>Je suis également <span class="keyword">formateur</span> et je participe aux <span class="keyword">recrutements</span> lors de la phase de validation technique.</p>
+<p>Je suis également <span class="keyword">formateur</span> et je participe aux <span class="keyword">recrutements</span> lors de la phase de validation technique de candidats.</p>
 <div id="plus" class="plus">Plus...</div>
 <div id="less" class="less hidden">Moins...</div>
 <div id="more" class="more hidden">
@@ -89,7 +91,7 @@ réussi passe nécessairement par la mise en place des méthodes agiles et la qu
 		</ul>
 	</div>
 	<div class="skill frameworks libraries">
-		<span class="title">Frameworks & Librairies</span>
+		<span class="title">Frameworks &amp; Librairies</span>
 		<ul>
 			<li>jUnit</li>
 			<li>Mockito</li>
@@ -116,18 +118,19 @@ réussi passe nécessairement par la mise en place des méthodes agiles et la qu
 	</div>
 	<div class="skill tools">
 		<span class="title">Outils</span>
-		<ul>
-			<li>Maven</li>
-			<li>Git</li>
-			<li>Jenkins</li>
-			<li>Nexus</li>
-			<li>Sonar</li>
+	    <ul>
             <li>Node.js</li>
+            <li></li>
+            <li>Maven</li>
+            <li>Git</li>
+            <li>Jenkins</li>
+            <li>Nexus</li>
+            <li>Sonar</li>
             <li>Tomcat</li>
             <li>JBoss</li>
-			<li>Solr</li>
-			<li>VisualVM</li>
-			<li>JMeter</li>
+            <li>Solr</li>
+            <li>VisualVM</li>
+            <li>JMeter</li>
             <li>Jira</li>
 		</ul>
 	</div>
@@ -145,6 +148,7 @@ réussi passe nécessairement par la mise en place des méthodes agiles et la qu
 		<span class="title">Données</span>
 		<ul>
 			<li>MongoDB</li>
+            <li>elasticsearch</li>
 			<li>Bases SQL</li>
 		</ul>
 	</div>
@@ -163,8 +167,12 @@ réussi passe nécessairement par la mise en place des méthodes agiles et la qu
     <span class="title">2013 (1 an)</span>
     <span class="title">Développeur Java chez Mappy</span>
     <div class="description">
-      <p>Intégration de flux de données (xml, json, csv) dans <span class="keyword">MongoDB</span>.</p>
-      <p>Développement d'une API REST d'accès aux données.</p>
+      <p>Intégration de flux de données (xml, json, csv) dans <span class="keyword">MongoDB</span> avec des batchs java orchestrés par jenkins.</p>
+      <p>Indexation des données dans solr</p>
+      <p>Développement d'une API <span class="keyword">REST</span> d'accès aux données pour les terminaux web et mobiles.</p>
+      <p>Configuration des environnements avec <span class="keyword">puppet</span> et capistrano.</p>
+      <p><span class="keyword">Optimisation</span> des ressources et du code pour supporter le fort traffic sur mappy.fr</p>
+      <p>BI sur les logs avec <span class="keyword">elasticsearch</span> / logstash / kibana</p>
     </div>
     <div class="tools">
       <ul>
@@ -178,6 +186,8 @@ réussi passe nécessairement par la mise en place des méthodes agiles et la qu
         <li>jUnit</li>
         <li>Mockito</li>
         <li>Git</li>
+        <li>Jmeter</li>
+        <li>elasticsearch</li>
       </ul>
     </div>
   </div>
@@ -198,7 +208,7 @@ réussi passe nécessairement par la mise en place des méthodes agiles et la qu
           l’expérience de navigation sur le site
           en optimisant les <span class="keyword">performances</span>.
       </p>
-      <p><span class="keyword">Référencement</span> du site sur les moteurs de recherche</p>
+      <p><span class="keyword">Référencement</span> du site, pourtant full JS, sur les moteurs de recherche</p>
     </div>
       <div class="tools">
           <ul>
@@ -693,7 +703,7 @@ réussi passe nécessairement par la mise en place des méthodes agiles et la qu
 <section class="side">
     <span>Filtre sur les missions</span>
     <div><input type="checkbox" data-filter="java" id="java"/><label for="java">Java</label></div>
-    <div><input type="checkbox" data-filter="web" id="web"/><label for="web">Web & Web mobile</label></div>
+    <div><input type="checkbox" data-filter="web" id="web"/><label for="web">Web &amp; Web mobile</label></div>
     <div><input type="checkbox" data-filter="nosql" id="nosql"/><label for="nosql">NoSQL</label></div>
     <div><input type="checkbox" data-filter="sm" id="sm"/><label for="sm">Scrum Master</label></div>
     <div><input type="checkbox" data-filter="tl" id="tl"/><label for="tl">Tech Lead</label></div>
