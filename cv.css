@@ -263,7 +263,7 @@ section.side {
     .resume .vcard > .coords, .resume .vcard > .title{
         width: 40%;
         text-align: center;
-        margin: 1em 4em 1em 4em;
+        margin: 0.2em 4em 1em 4em;
         }
 
     .resume .coords a {
