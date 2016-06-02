@@ -1,4 +1,4 @@
-body{
+body {
     font-family: 'Roboto', sans-serif;
     font-size: .9em;
     margin: 0;
@@ -19,23 +19,23 @@ header {
     width: 100%;
     max-width: 1024px;
     background-color: #BDD;
-    height : 2.5em;
-    opacity : 1;
+    height: 2.5em;
+    opacity: 1;
     z-index: 1000;
     left: 0;
     top: 0;
 }
 
-header a{
-    display : inline-block;
-    margin : .6em 0 .6em 1em;
+header a {
+    display: inline-block;
+    margin: .6em 0 .6em 1em;
 }
 
 .animation {
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-duration: .4s;
     -moz-animation-duration: .4s;
-    -moz-animation-fill-mode:forwards
+    -moz-animation-fill-mode: forwards
     animation-duration: .4s;
     animation-fill-mode: forwards;
 }
@@ -45,41 +45,71 @@ header a{
     -moz-animation-name: animationOn;
     animation-name: animationOn;
 }
+
 .animationOff {
     -webkit-animation-name: animationOff;
     -moz-animation-name: animationOff;
     animation-name: animationOff;
 }
 
-@-webkit-keyframes animationOn{
-    from  {margin-left: -100%}
-    to  {margin-left: 0}
+@-webkit-keyframes animationOn {
+    from {
+        margin-left: -100%
+    }
+    to {
+        margin-left: 0
+    }
 }
+
 @-webkit-keyframes animationOff {
-    from  { margin-left: 0}
-    to  { margin-left: -100%}
+    from {
+        margin-left: 0
+    }
+    to {
+        margin-left: -100%
+    }
 }
-@-moz-keyframes animationOn{
-    from  {margin-left: -100%}
-    to  {margin-left: 0}
+
+@-moz-keyframes animationOn {
+    from {
+        margin-left: -100%
+    }
+    to {
+        margin-left: 0
+    }
 }
+
 @-moz-keyframes animationOff {
-    from  { margin-left: 0}
-    to  { margin-left: -100%}
+    from {
+        margin-left: 0
+    }
+    to {
+        margin-left: -100%
+    }
 }
+
 @keyframes animationOn {
-    from  {margin-left: -100%}
-    to  {margin-left: 0}
+    from {
+        margin-left: -100%
+    }
+    to {
+        margin-left: 0
+    }
 }
+
 @keyframes animationOff {
-    from  { margin-left: 0}
-    to  { margin-left: -100%}
+    from {
+        margin-left: 0
+    }
+    to {
+        margin-left: -100%
+    }
 }
 
 .resume {
     font-size: 1em;
     margin: 4em 0 0 0;
-    position : absolute;
+    position: absolute;
     max-width: 1044px;
     padding-bottom: 1em;
 }
@@ -89,16 +119,16 @@ a {
     text-decoration: none;
     display: block;
 }
-a:hover
-{
-    color:#888;
-    text-decoration:none;
-    cursor:pointer;
+
+a:hover {
+    color: #888;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.keyword{
+.keyword {
     font-weight: bold;
-    white-space:nowrap;
+    white-space: nowrap;
 }
 
 .resume ul {
@@ -106,29 +136,28 @@ a:hover
     display: inline-block;
 }
 
-.resume li{
+.resume li {
     display: inline;
     font-style: italic;
-    white-space:nowrap;
+    white-space: nowrap;
 }
 
-.resume li:after{
-    content : ", "
+.resume li:after {
+    content: ", "
 }
-.resume li:last-child:after{
-    content : "."
+
+.resume li:last-child:after {
+    content: "."
 }
 
 .title span {
     display: block;
 }
 
-
-.coords .name,.resume .vcard > .title {
+.coords .name, .resume .vcard > .title {
     font-size: 1em;
     font-weight: bold;
 }
-
 
 .resume .vcard > .coords, .resume .vcard > .title {
     width: 70%;
@@ -145,24 +174,26 @@ a:hover
     margin-top: 0;
 }
 
-.short.description{
+.short.description {
     padding: .5em 1em .5em 1em;
     border: 1px solid black;
     background-color: #BDD;
     margin: 1em;
 }
+
 .short.description p {
     margin: 0 0 .2em 0em;
 }
-.short.description p+p {
+
+.short.description p + p {
     margin-top: 1em;
 }
 
-.short.description .plus{
+.short.description .plus {
     text-align: right;
 }
 
-.description .more{
+.description .more {
     margin-top: 1em;
 }
 
@@ -171,13 +202,12 @@ section .title {
     font-weight: bold;
 }
 
-section > .title{
+section > .title {
     display: inline-block;
     font-size: 1.5em;
     color: #888;
     position: relative;
 }
-
 
 .skill {
     margin-top: 0.8em;
@@ -194,7 +224,7 @@ section {
 
 .skills ul, .missions ul {
     width: 95%;
-    margin:.2em 0 0 0;
+    margin: .2em 0 0 0;
     padding: 0;
 }
 
@@ -203,32 +233,38 @@ section {
     display: block;
 }
 
-.skill ul:first-of-type{
+.skill ul:first-of-type {
     margin: 0;
     padding-left: 0;
 }
 
-section.switch > span{
+.skill .deprecated {
+    font-size: .75em;
+}
+
+section.switch > span {
     display: inline-block;
     margin-top: 1em;
     font-weight: bold;
 }
-section.switch > span.hidden{
+
+section.switch > span.hidden {
     display: none;
 }
 
-.mission .description p{
+.mission .description p {
     margin: .2em 0 0 0;
 }
 
-.mission:first-of-type{
+.mission:first-of-type {
     margin-top: .8em;
 }
 
-.mission+.mission{
+.mission + .mission {
     margin-top: 2em;
 }
-.mission .title{
+
+.mission .title {
     font-weight: bold;
     width: 80%;
     display: block;
@@ -238,10 +274,9 @@ section.switch > span.hidden{
     margin-top: .6em;
 }
 
-.article+.article{
+.article + .article {
     margin-top: 1em;
 }
-
 
 .formation span {
     display: block;
@@ -252,40 +287,40 @@ section.switch > span.hidden{
 }
 
 section.side {
-    display : none;
+    display: none;
 }
 
-@media screen and (min-width:800px){
+@media screen and (min-width: 800px) {
     body {
         font-size: 1em;
     }
 
-    .resume .vcard > .coords, .resume .vcard > .title{
+    .resume .vcard > .coords, .resume .vcard > .title {
         width: 40%;
         text-align: center;
         margin: 0.2em 4em 1em 4em;
-        }
+    }
 
     .resume .coords a {
         display: inline;
     }
 
-    .resume .coords a+a:before{
+    .resume .coords a + a:before {
         content: " - ";
     }
 
-    .resume .vcard > .title{
+    .resume .vcard > .title {
         position: absolute;
         right: 0;
         left: inherit;
         margin-top: 0;
     }
 
-    .short.description p+p {
+    .short.description p + p {
         margin-top: .3em;
     }
 
-    section > .title{
+    section > .title {
         -webkit-transform-origin: 0em 0em;
         -moz-transform-origin: 0em 0em;
         -ms-transform-origin: 0em 0em;
@@ -301,7 +336,7 @@ section.side {
         width: 90%;
     }
 
-    section.missions{
+    section.missions {
         margin-bottom: 0;
     }
 
@@ -310,16 +345,19 @@ section.side {
         -moz-transform: rotate(270deg) translate(-6.6em, -2em);
         -ms-transform: rotate(270deg) translate(-6em, -2em);
     }
+
     section.skills > .title {
         -webkit-transform: rotate(270deg) translate(-6.5em, -2em);
         -moz-transform: rotate(270deg) translate(-7.2em, -2em);
         -ms-transform: rotate(270deg) translate(-6.8em, -2em);
     }
+
     section.articles > .title {
         -webkit-transform: rotate(270deg) translate(-3.8em, -2em);
         -moz-transform: rotate(270deg) translate(-4.2em, -2em);
         -ms-transform: rotate(270deg) translate(-4em, -2em);
     }
+
     section.formations > .title {
         -webkit-transform: rotate(270deg) translate(-4.5em, -2em);
         -moz-transform: rotate(270deg) translate(-5em, -2em);
@@ -330,28 +368,27 @@ section.side {
         border-left: 1px dashed grey;
     }
 
-    .formation+.formation{
+    .formation + .formation {
         margin-top: 1.5em;
         padding-bottom: 1em;
     }
 
 }
 
-@media screen and (min-width:1200px){
-    section.side{
+@media screen and (min-width: 1200px) {
+    section.side {
         position: fixed;
         left: 1056px;
-        top:50%;
+        top: 50%;
         margin: 0 .5em 0 0;
         padding: 0 1em;
         width: auto;
-        border-right:3px solid black;
-        border-left:3px solid black;
+        border-right: 3px solid black;
+        border-left: 3px solid black;
     }
 
     section.side {
-        display : block;
+        display: block;
     }
-
 
 }
