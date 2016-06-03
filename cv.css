@@ -137,7 +137,7 @@ a:hover {
 }
 
 .resume li {
-    display: inline;
+    display: inline-block;
     font-style: italic;
     white-space: nowrap;
 }
@@ -191,6 +191,7 @@ a:hover {
 
 .short.description .plus {
     text-align: right;
+    cursor:pointer;cursor:hand
 }
 
 .description .more {
@@ -250,6 +251,10 @@ section.switch > span {
 
 section.switch > span.hidden {
     display: none;
+}
+
+.switch.displayOld {
+    cursor:pointer;cursor:hand
 }
 
 .mission .description p {
