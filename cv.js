@@ -8,16 +8,16 @@
 	
 	Element.prototype.addClass = function(c){
 		return this.classList.add(c);
-	}
+	};
 	Element.prototype.removeClass = function(c){
 		return this.classList.remove(c);
-	}
+	};
 	Element.prototype.toggleClass = function(c){
 		return this.classList.toggle(c);
-	}
+	};
 	Element.prototype.containsClass = function(c){
 		return this.classList.contains(c);
-	}
+	};
 	
 	if (!document.getElementsByClassName('mission')[0].classList)
 	{
@@ -54,10 +54,10 @@
 		
 		Element.prototype.addClass = function(c){
 			return ie9Support.addClass(c, this);
-		}
+		};
 		Element.prototype.removeClass = function(c){
 			return ie9Support.removeClass(c,this);
-		}
+		};
 		Element.prototype.toggleClass = function(c){
 			return ie9Support.toggleClass(c,this);
 		}
@@ -85,7 +85,6 @@
                 checkboxes = checkboxes.length > 0 ? checkboxes : document.querySelectorAll('input[type=checkbox]');
                 missionFilter.filterMissionWithTags(checkboxes.toArray().map(function(c){
 					return (c.dataset ? c.dataset.filter : c.getAttribute('data-filter'));
-		
                 }));
                 ga('send', 'event', 'button', 'click', 'filter' + e.target.id);
             }
@@ -124,7 +123,7 @@
                 displayOld.innerHTML = "Afficher les missions plus anciennes";
                 ga('send', 'event', 'button', 'click', 'old missions', 0);
             }
-        }
+        };
 
         descriptionPlus.onclick = function(){
             if (plus.innerHTML.match(plusRegexp)){
@@ -135,7 +134,7 @@
                 ga('send', 'event', 'button', 'click', 'more description', 0);
             }
             descriptionMore.toggleClass("hidden");
-        }
+        };
 
         sideFilter.onclick = missionFilter.onChechboxFilterClick;
 
@@ -149,7 +148,7 @@
                 header.addClass("animationOn");
             }
         };
-    };
+    }
 
     window.onload = registerEvents;
 })();
