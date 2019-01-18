@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: .9em;
     margin: 0;
-    background-color: #DDF4B4;
+    background-color: white;
 }
 
 .hidden, .hiddenOld {
@@ -18,7 +18,7 @@ header {
     position: fixed;
     width: 100%;
     max-width: 1024px;
-    background-color: #A5B480;
+    background-color: #EFEFEF;
     height: 2.5em;
     opacity: 1;
     z-index: 1000;
@@ -177,7 +177,7 @@ a:hover {
 .short.description {
     padding: .5em 1em .5em 1em;
     border: 1px solid black;
-    background-color: #A5B480;
+    background-color: #EFEFEF;
     margin: 1em;
 }
 
@@ -206,7 +206,7 @@ section .title {
 section > .title {
     display: inline-block;
     font-size: 1.5em;
-    color: #888;
+    color: #AAAAAA;
     position: relative;
 }
 
