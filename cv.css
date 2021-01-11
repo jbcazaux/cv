@@ -172,6 +172,7 @@ section {
 .separator {
     border-left: 1px solid #3465a4;
     margin-top: 1em;
+    margin-left: 1em;
 }
 
 .plus {
