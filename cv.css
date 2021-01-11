@@ -40,6 +40,7 @@ section {
 }
 
 .main {
+    display: flex;
     align-items: center;
 }
 
@@ -51,7 +52,7 @@ section {
 
 .intro p {
     margin-block-start: 0;
-    margin-block-end: 0em;
+    margin-block-end: 0;
 }
 
 .keyword {
@@ -78,7 +79,9 @@ section {
     padding: 1em 0 1em 1em;
 }
 
-img {max-width:100%;}
+img {
+    max-width: 100%;
+}
 
 .contacts {
     display: flex;
@@ -207,3 +210,60 @@ img {max-width:100%;}
 .oldies {
     font-weight: bold;
 }
+
+@media screen and (max-width: 800px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .bio .main {
+        flex-direction: column;
+    }
+
+    .bio .main .name {
+        margin-bottom: 1em;
+    }
+
+    .picture {
+        padding: 1em 0 0 0;
+    }
+
+    .picture img {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .bio .main {
+        flex-direction: column;
+    }
+
+    .bio .main .name {
+        margin-bottom: 1em;
+    }
+
+    .picture {
+        padding: 1em 0 0 0;
+    }
+
+    .picture img {
+        max-width: 50%;
+    }
+
+    .resume {
+        flex-direction: column-reverse;
+    }
+
+    .plus {
+        padding: 0;
+    }
+
+    .plus .title::before {
+        display: none;
+    }
+}
+
