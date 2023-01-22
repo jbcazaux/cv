@@ -10,6 +10,11 @@ body {
     overflow-y: auto;
 }
 
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 section {
     display: flex;
     margin: 1em;
@@ -24,7 +29,7 @@ section {
 }
 
 .header {
-    display: flex;
+    display: block;
     align-items: center;
 }
 
@@ -34,7 +39,7 @@ section {
     flex: 3;
 }
 
-.main, .intro {
+.main {
     display: flex;
     justify-content: space-around;
 }
@@ -46,7 +51,6 @@ section {
 
 .intro {
     margin-top: 1em;
-    display: flex;
     flex-direction: column;
 }
 
@@ -73,12 +77,14 @@ section {
 }
 
 .picture {
-    display: flex;
+    display: block;
     flex: 1;
     justify-content: center;
     align-items: flex-start;
     align-self: center;
-    padding: 1em 0 1em 1em;
+    padding: 0 0 1em 1em;
+    float: right;
+    width: 150px;
 }
 
 .picture img {
@@ -228,14 +234,6 @@ section {
     .bio .main .name {
         margin-bottom: 1em;
     }
-
-    .picture {
-        padding: 1em 0 0 0;
-    }
-
-    .picture img {
-        max-width: 50%;
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -253,10 +251,6 @@ section {
 
     .picture {
         padding: 1em 0 0 0;
-    }
-
-    .picture img {
-        max-width: 50%;
     }
 
     .resume {
